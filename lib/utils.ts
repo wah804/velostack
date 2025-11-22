@@ -1,12 +1,6 @@
-// lib/utils.ts
-// Small utility functions used across the app.
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
 
-export function formatDateISO(date: Date = new Date()): string {
-  return date.toISOString();
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
 }
-
-export function sleep(ms: number) {
-  return new Promise<void>((resolve) => setTimeout(resolve, ms));
-}
-
-export function noop(): void {}
